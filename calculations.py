@@ -17,9 +17,7 @@ def calc_parity(main_cmds):
          "calculate parity")
     while True:      
         menu_level_pointer = ">> " + main_cmds.cmds_keys['par'] + ":"
-
         input_str = input_handler(menu_level_pointer)
-
         if input_str == main_cmds.cmds_keys['b']:
             break
         elif input_str == main_cmds.cmds_keys['q']:
@@ -42,9 +40,7 @@ def calc_trig(main_cmds):
         menu_level_pointer = ">> " + main_cmds.cmds_keys['trig'] + ":"
         sin_pointer = ">> sin:"
         cos_pointer = ">> cos:"
-
         input_str = input_handler(menu_level_pointer)
-
         if input_str == main_cmds.cmds_keys['b']:
             break
         elif input_str == main_cmds.cmds_keys['q']:
@@ -71,7 +67,6 @@ def calc_rand(main_cmds):
          "for the random number N between 0 and 1. The result will be X*N. ")
     while True:
         menu_level_pointer = ">> " + main_cmds.cmds_keys['rand'] + ":"
-
         input_str = input_handler(menu_level_pointer)
         # input = b, loop quit condition
         if input_str == main_cmds.cmds_keys['b']:  
@@ -92,9 +87,7 @@ def calc_remap(main_cmds):
         "commands\n(q,b,h not remappable)")
     while True:
         menu_level_pointer = ">> old key to remap:"
-
         input_str = input_handler(menu_level_pointer)
-
         if input_str == main_cmds.cmds_keys['b']:
             break
         elif input_str == main_cmds.cmds_keys['q']:
@@ -105,7 +98,6 @@ def calc_remap(main_cmds):
             old_input_str = input_str
             menu_level_pointer = ">> new key to remap:"
             input_str = input_handler(menu_level_pointer)
-            
             main_cmds.remap(old_input_str, input_str)
             break
         elif input_str not in main_cmds.cmds_keys.values():
@@ -115,12 +107,9 @@ def calc_remap(main_cmds):
 def calculate(main_cmds, memory_cells):
     print("\nType q to quit, b to return to main menu, " + 
           main_cmds.cmds_keys['mem'] + " to visualize saved variables\n")
-
     while True:
         menu_level_pointer = ">> calc:"
-
         input_str = input_handler(menu_level_pointer)
-
         if input_str == main_cmds.cmds_keys['b']:
             break
         elif input_str == main_cmds.cmds_keys['q']:
@@ -136,20 +125,16 @@ def calculate(main_cmds, memory_cells):
             break
         else:
             input_str.replace(' ', '')
-
             input_variables_counter = 0
             input_operators_counter = 0
             allowed_operators = ['+', '-', '*', '/']
             var_to_calc = [0,1]
             variables_to_calc_name = []
-
             for allowed_operator in allowed_operators:
                 if input_str.count(allowed_operator) == 1:
                     input_operators_counter = input_operators_counter + 1
                     operator_sign = allowed_operator
-
             variables_to_calc_name = input_str.split(operator_sign)
-
             for i in range(len(memory_cells)): # operand assignment
                 for name, value in memory_cells[i].object.items():
                     if variables_to_calc_name[0] == name:
@@ -158,13 +143,11 @@ def calculate(main_cmds, memory_cells):
                     elif variables_to_calc_name[1] == name:
                         input_variables_counter = input_variables_counter + 1
                         var_to_calc[1] = value
-
             if input_str.find(variables_to_calc_name[1]) < input_str.find(
                 variables_to_calc_name[0]): # operand reordering
                 var_to_calc[1]
                 var_to_calc[0] = var_to_calc[0]
                 var_to_calc[1]
-
             if input_variables_counter == 2 and input_operators_counter == 1:
                 # sum
                 if operator_sign == '+': 
@@ -186,7 +169,6 @@ def calculate(main_cmds, memory_cells):
                             var_to_calc[1]):
                             calc_result = []
                             calc_result_row = []
-
                             for i in range(len(var_to_calc[0])):
                                 if type(var_to_calc[0][i]) is float and (
                                     type(var_to_calc[1][i]) is float):
@@ -200,7 +182,6 @@ def calculate(main_cmds, memory_cells):
                                             var_to_calc[0][i][j])
                                         calc_result.append(calc_result_row)
                                         calc_result_row = []
-
                             print(str(var_to_calc[0]) + ' + ' + 
                                   str(var_to_calc[1]) + ' = ' + 
                                   str(calc_result))
@@ -233,7 +214,6 @@ def calculate(main_cmds, memory_cells):
                         type(var_to_calc[1]) is not float): 
                         calc_result = []
                         calc_result_row = []
-
                         for i in range(len(var_to_calc[1])):
                             # scalar-vector multiplication (scalar product)
                             if type(var_to_calc[1][i]) is float: 
@@ -245,8 +225,7 @@ def calculate(main_cmds, memory_cells):
                                     calc_result_row.append(
                                         var_to_calc[1][i][j] * var_to_calc[0])
                                 calc_result.append(calc_result_row)
-                                calc_result_row = []
-                                
+                                calc_result_row = []  
                         print(str(var_to_calc[0]) + ' * ' + 
                               str(var_to_calc[1]) + ' = ' + str(calc_result))
                     # vector/matrix-scalar multiplication
@@ -254,7 +233,6 @@ def calculate(main_cmds, memory_cells):
                         type(var_to_calc[1]) is float):  
                         calc_result = []
                         calc_result_row = []
-
                         for i in range(len(var_to_calc[0])):
                             # vector-scalar multiplication
                             if type(var_to_calc[0][i]) is float: 
@@ -275,7 +253,6 @@ def calculate(main_cmds, memory_cells):
                         calc_result = []
                         calc_result_row = []
                         calc_coloumn = []
-
                         if len(var_to_calc[0]) != len(var_to_calc[1]):
                             print('Variables are not of the same dimension')
                         else:
@@ -299,7 +276,6 @@ def calculate(main_cmds, memory_cells):
                                         calc_temp_sum = calc_temp_sum +( 
                                         var_to_calc[0][j]*calc_coloumn[j])
                                     calc_result_row.append(calc_temp_sum)
-
                                     calc_result.append(calc_result_row[0])
                                     calc_result_row = []
                                     calc_coloumn = []
@@ -314,7 +290,6 @@ def calculate(main_cmds, memory_cells):
                                         calc_temp_sum = calc_temp_sum + (
                                             var_to_calc[1][j]*calc_coloumn[j])
                                     calc_result_row.append(calc_temp_sum)
-
                                     calc_result.append(calc_result_row[0])
                                     calc_result_row = []
                                     calc_coloumn = []
@@ -325,7 +300,6 @@ def calculate(main_cmds, memory_cells):
                                     for j in range(len(calc_result[i])):
                                         for k in range(len(calc_result[i])):
                                             calc_result[j][k] = 0.0
-
                                     for l in range(len(var_to_calc[0])):
                                         for j in range(len(var_to_calc[0])):
                                             for k in range(len(
