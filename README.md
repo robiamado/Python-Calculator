@@ -6,24 +6,25 @@ It performs a simple memory system storing global variables
 with variables names and values.
 
 Any input to memorize variables is in the form:
-*variable_name*=*variable_value*
+*variable_name = variable_value*
 
-where:
-- *variable_name* can be any string and must be before = sign 
-- *variable_value* can be:
-  - scalar with integr or float syntax 0,1,2,...,-1,-2,...0.1,-0.1,...
-    e.g. 
-    x = 1 </br>
-    y = 2.5 </br>
-    z = 3.1416 </br>
-  - vector with syntax vector=(scalar1,scalar2,scalar3,...) 
-    where , delimitator is used to separate vector elements.
-    e.g.
+- *variable_name* can be any string and must be before = sign </br>
+- *variable_value* can be: </br>
+  - scalar with integer or float syntax 0,1,2,-1,-2,0.1,-0.1,... </br>
+    e.g. </br>
+    x=1 </br>
+    y=2.5 </br>
+    z=3.1416 </br>
+  - vector with syntax (scalar1,scalar2,scalar3,...) </br>
+    where , delimitator is used to separate vector elements. </br>
+    e.g. </br>
     v=(1,2,3) </br>
     w=(1.5,2.5,3.5,0.1) </br>
-  - matrix with syntax matrix=(scalar11,scalar12,...;scalar21,scalar22;...)
+  - matrix with syntax (scalar11,scalar12,...;scalar21,scalar22;...) </br>
     where , delimitator is used to separate matrix elements on same row </br>
     and ; delimitator is used to separate each rows </br>
+    e.g. </br>
+    m = (1,2,3;4,5,6;7,8,9)
 
 **Operate with variables** </br>
 Enter 'calc' to be able to sum, subtract, multiply scalars, vectors and matrices </br>
