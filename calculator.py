@@ -1,6 +1,6 @@
 import os, math, random
-from Memory import *
-from Calculations import *
+from memory import *
+from calculations import *
 
 g_memory_name = ''
 g_memory_value = []
