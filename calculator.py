@@ -8,7 +8,6 @@ g_memory_value = []
 class commands():
     def __init__(self):
         self.cmds_keys = {}
-
         self.cmds_keys['h'] = 'h'
         self.cmds_keys['q'] = 'q'
         self.cmds_keys['b'] = 'b'
@@ -22,7 +21,6 @@ class commands():
 
     def remap(self, cmd_to_remap, cmd_remapped):
         key_counter = 0
-
         for value in self.cmds_keys.values():
             if cmd_remapped == value:
                 key_counter = key_counter+1
@@ -68,27 +66,20 @@ def help(main_cmds):
                   main_cmds.cmds_keys['calc'] + " to operate with memorized"
                  "variables", 
                   main_cmds.cmds_keys['rmap'] + " to remap a command"]
-    
     help_print_output = "\n-------------- COMMANDS --------------\n\n"
-
     for help_line in help_lines:
         help_print_output += "Type " + help_line + "\n"
-
     print(help_print_output)
 
 def main(boot_cmds):
     global g_memory_name
     global g_memory_value
-
     main_cmds = boot_cmds
     memory_cells = []
-
     print("Type 'h' for help and a list of all available commands.")
     while True:
         menu_level_pointer = ">>:"
-
         input_str = input_handler(menu_level_pointer)
-
         if input_str == main_cmds.cmds_keys['q']:
             exit_program()
         elif input_str == main_cmds.cmds_keys['b']:
