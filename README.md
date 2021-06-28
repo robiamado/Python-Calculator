@@ -24,7 +24,7 @@ Any input to memorize variables is in the form:
     where , delimitator is used to separate matrix elements on same row </br>
     and ; delimitator is used to separate each rows </br>
     e.g. </br>
-    m = (1,2,3;4,5,6;7,8,9)
+    m=(1,2,3;4,5,6;7,8,9)
 
 **Operate with variables** </br>
 Enter 'calc' to be able to sum, subtract, multiply scalars, vectors and matrices </br>
