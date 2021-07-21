@@ -7,7 +7,7 @@ A simple python calculator able to memorize and operate with scalars, vectors an
 
 ## Install
 
-- Run from source _calculator.py_.
+- Run from source: _Python calculator.py_.
 
 ## Memorize Variables
 It performs a simple memory system storing global variables 
