@@ -1,7 +1,7 @@
 # Python-Calculator
 A simple python calculator able to memorize and operate with scalars, vectors and matrices.
 
-**Memorize Variables** </br>
+## Memorize Variables
 It performs a simple memory system storing global variables 
 with variables names and values.
 
@@ -26,10 +26,11 @@ Any input to memorize variables is in the form:
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.g. </br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m=(1,2,3;4,5,6;7,8,9)
 
-**Operate with variables** </br>
+## Operate with variables
 Enter 'calc' to be able to sum, subtract, multiply scalars, vectors and matrices </br>
 or divide scalars. </br>
 
 Entering 'h' will give a set of auxiliary basic features and commands. </br>
 
+## CONTACTS
 Please report any bug at robiamado@gmail.com
