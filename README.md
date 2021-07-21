@@ -40,5 +40,5 @@ or divide scalars. </br>
 
 Entering 'h' will give a set of auxiliary basic features and commands. </br>
 
-## CONTACTS
+## Contacts
 Please report any bug at robiamado@gmail.com
