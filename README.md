@@ -1,4 +1,4 @@
-# Python-Calculator
+# Python Calculator
 A simple python calculator able to memorize and operate with scalars, vectors and matrices.
 
 ## Requirements
