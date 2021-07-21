@@ -1,6 +1,14 @@
 # Python-Calculator
 A simple python calculator able to memorize and operate with scalars, vectors and matrices.
 
+## Requirements
+
+- Python >=3.9
+
+## Install
+
+- Run from source _calculator.py_.
+
 ## Memorize Variables
 It performs a simple memory system storing global variables 
 with variables names and values.
